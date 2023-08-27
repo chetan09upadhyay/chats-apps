@@ -21,19 +21,18 @@ app.use("/api/messages",messagesRoutes);
 
 
 
-// mongoose.connect(process.env.MONGO_URL ,{
-//     useNewUrlParser:true,
-//     useUnifiedTopology:true,
-// })
-// .then(() =>{
-//     console.log("DB is run successfully");
-// })
-// .catch((err) =>{
-//     console.log(err.message);
-// }); 
+mongoose.connect(process.env.MONGO_URL ,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true,
+})
+.then(() =>{
+    console.log("DB is run successfully");
+})
+.catch((err) =>{
+    console.log(err.message);
+}); 
 
 
-mongoose.connect('mongodb+srv://chetanupadhyay653:<Chetan_653>@cluster0.oc0wfx2.mongodb.net/?retryWrites=true&w=majority')
 
 // static files.
 app.use(express.static(path.join(__dirname, '../pub/build')));
